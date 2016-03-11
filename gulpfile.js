@@ -114,7 +114,7 @@ function premailergo (slimEnd) {
 // lancement > fonction watch
 gulp.task('dev',['browserSync','img','slim','sass','premailer'], function() {
   // src+'*.slim', ,src+'**/*.slim' // pas de fichier sur :root
-  gulp.watch([src+'**/images/*.{png,jpg,gif}'],['img']);
+  gulp.watch([src+'**/images/*.{png,jpg,gif}'],['img','slim','sass']);
   gulp.watch([src+'**/slim/*.slim',src+'**/**/*.slim'],['slim','sass','premailer']);
   gulp.watch(src+'**/scss/*.scss',['sass','premailer','slim']);
 });

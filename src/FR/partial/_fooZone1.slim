@@ -5,7 +5,7 @@ table border==($tabborder0) bgcolor="#ffffff" width=$tab2
         tr
           td style="padding-right: 10px; padding-left: 8px; "
             a target="_blank" href==($fURL)
-              img alt="" border="0" height="102" src="images/fooZ1_internet.png" width="102"
+              img alt="" border="0" height="102" src=$imgSrc+"fooZ1_internet.png" width="102"
           td height="102" valign="middle" width="230" style="vertical-align: middle;"
             a target="_blank" href==($fURL) style="text-decoration: none;"
               span style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; color: #922625; " 
@@ -15,9 +15,12 @@ table border==($tabborder0) bgcolor="#ffffff" width=$tab2
                   | Rendez-vous sur
                   br
                   | www.confortetvie.fr
-          td bgcolor="#ffffff" width="10" 
+
+          td bgcolor="#ffffff" width="10"
+
           td style="padding-right: 10px; padding-left: 8px; " 
-            img alt="" border="0" height="102" src="images/fooZ1_phone.png" width="102"
+            img alt="" border="0" height="102" src=$imgSrc+"fooZ1_phone.png" width="102"
+          
           td height="102" valign="middle" width="230" style="vertical-align: middle;"
             table border==($tabborder0) bgcolor="#ffffff" 
               tr
@@ -26,27 +29,10 @@ table border==($tabborder0) bgcolor="#ffffff" width=$tab2
                     | PAR TÉLÉPHONE
               tr
                 td style="font-family: Arial, sans-serif; font-size: 16px; color: #922625; font-weight: bold; "
-                  img border="0" src="images/CV_ServicePayantPrixAppel.png" alt="0892 460 440 Service 0,40€ / min + prix appel"
+                  img border="0" src=$imgSrc+"CV_ServicePayantPrixAppel.png" alt="0892 460 440 Service 0,40€ / min + prix appel"
               tr
                 td style="font-family: Arial, sans-serif; color: #922625; "
                   span style="font-size: 14px; font-weight: normal; " 
                     | du lundi au vendredi de 7h à 20h
                     br
                     | samedi de 9h à 19h
-            / old    
-            / span style="font-family: Arial, sans-serif; font-size: 16px; color: #922625; font-weight: bold; " 
-            /   | PAR TÉLÉPHONE
-            /   br
-            /   span style="display: block; font-size: 14px; font-weight: normal; "
-            /     img src="images/CV_ServicePayant+prixAppel.png" alt="0892 460 440 Service 0,40€ / min + prix appel"
-
-                / |au 
-              / | 0892 460 440 
-              / span style="font-size: 11px; "
-              /   | (0,34€/min)
-              / br
-
-              / span style="display: block; font-size: 14px; font-weight: normal; " 
-              /   | du lundi au vendredi de 7h à 20h
-              /   br
-              /   | samedi de 9h à 19h

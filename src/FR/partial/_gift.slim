@@ -1,24 +1,24 @@
 table border==($tabborder0)
   tr
-    td style="padding-top: 10px;"
+    td.pdt10
       table border==($tabborder0)
         tr
           td valign="middle"
             a target="_blank" href==$gift[0]
-              img.altgift alt==$giftAlt[0] border="0" src="images/gift-csoa.jpg" width="355" height="330"
+              img.altgift alt==$giftAlt[0] border="0" src=$imgSrc+"gift-csoa.jpg" width="355" height="330"
           td
             table border==($tabborder0)
               tr
                 td
                   a target="_blank" href==$gift[0]
-                    img.altgift alt==$giftAlt[1] border="0" src="images/gift-cmc.jpg" width="355" height="279"
+                    img.altgift alt==$giftAlt[1] border="0" src=$imgSrc+"gift-cmc.jpg" width="355" height="279"
               tr
                 td height="30" bgcolor="#FFFFFF" valign="top" align="center"
                   table border==($tabborder0)
                    tr
                     td
-                      img border="0" src="images/gift-code1_1.jpg" width="52" height="30" alt=""
-                    td bgcolor="#FFFFFF" valign="middle" width="303" height="30" style="padding-left: 8px; "
+                      img border="0" src=$imgSrc+"gift-code1_1.jpg" width="52" height="30" alt=""
+                    td.pdl8 bgcolor="#FFFFFF" valign="middle" width="303" height="30"
                       font.giftCode
                         b
                           | Votre code cadeau 
@@ -26,13 +26,13 @@ table border==($tabborder0)
                             == $code
               tr
                 td
-                  img border="0" src="images/gift-code2.jpg" width="355" height="21" alt=""
+                  img border="0" src=$imgSrc+"gift-code2.jpg" width="355" height="21" alt=""
 
 /! gift => bottom shadow
 table border==($tabborder0) width=$tab2
   tr
     td 
-      img alt="" border="0" src="images/gift_b-shadow.png"
+      img alt="" border="0" src=$imgSrc+"gift_b-shadow.png"
 /! gift aera button
 table border==($tabborder0) width==($tabArray[0])
   tr

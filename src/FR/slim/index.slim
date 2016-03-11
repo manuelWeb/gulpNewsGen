@@ -1,4 +1,6 @@
-- bgcolor = "#F9F1F1"
+- $bgcolor = "#F9F1F1"
+- $imgSrc = "http://www.webdesignord.fr/domoti/CV/images/"
+- $imgSrc = "images/"
 == Slim::Template.new('./src/FR/var/_var-gift.slim').render
 == Slim::Template.new('./src/FR/var/_var-link.slim').render
 == Slim::Template.new('./src/FR/var/_var-pcktxt.slim').render
@@ -10,9 +12,8 @@ html xmlns="http://www.w3.org/1999/xhtml"
     title Confort &amp; Vie
     link href="css/styles.css" rel="stylesheet" type="text/css"
     / link href="scss/styles.scss" rel="stylesheet" type="text/css"
-
-  body link="#333333" vlink="#F96107" style="margin: 0; padding: 0; " bgcolor==(bgcolor)
-    table border==($tabborder0) bgcolor==(bgcolor) width="100%"
+  body link="#333333" vlink="#F96107" style="margin: 0; padding: 0; " bgcolor==($bgcolor)
+    table border==($tabborder0) bgcolor==($bgcolor) width="100%"
       tr
         td
           /! header document 
@@ -22,8 +23,6 @@ html xmlns="http://www.w3.org/1999/xhtml"
           /! tab content
           table border==($tabborder0) align="center" width=$tab2
             tr
-              /! content container; padding-top => cf corners / bgcolor="#FFFFFF"
-              / style=$pl+$pad_ext.to_s+'px;'+$pr+$pad_ext.to_s+'px;'
               td 
                 /! header news
                 == Slim::Template.new('./src/FR/partial/_header.slim').render
@@ -71,7 +70,11 @@ html xmlns="http://www.w3.org/1999/xhtml"
                 == Slim::Template.new('./src/FR/partial/_fooZone2.slim').render
 
           /!  shaded transparent separator
+      tr
+        td
           == Slim::Template.new('./src/FR/partial/_separator-transp.slim').render
 
+      tr
+        td
           /!  legal notice
           == Slim::Template.new('./src/FR/partial/_legal.slim').render
