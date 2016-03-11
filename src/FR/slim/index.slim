@@ -1,0 +1,78 @@
+- bgcolor = "#F9F1F1"
+- $colorTxtCodeKdo = "#674996"
+== Slim::Template.new('./src/FR/var/_var-gift.slim').render
+== Slim::Template.new('./src/FR/var/_var-link.slim').render
+== Slim::Template.new('./src/FR/var/_var-pcktxt.slim').render
+== Slim::Template.new('./src/FR/var/_var-layout.slim').render
+doctype transitional
+html xmlns="http://www.w3.org/1999/xhtml"
+  head
+    meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+    title Confort &amp; Vie
+    link href="css/styles.css" rel="stylesheet" type="text/css"
+    / link href="scss/styles.scss" rel="stylesheet" type="text/css"
+
+  body link="#333333" vlink="#F96107" style="margin: 0; padding: 0; " bgcolor==(bgcolor)
+    table border==($tabborder0) bgcolor==(bgcolor) width="100%"
+      tr
+        td
+          /! header document 
+          == Slim::Template.new('./src/FR/partial/_document-header.slim').render
+      tr
+        td
+          /! tab content
+          table border==($tabborder0) align="center" width=$tab2
+            tr
+              /! content container; padding-top => cf corners / bgcolor="#FFFFFF"
+              / style=$pl+$pad_ext.to_s+'px;'+$pr+$pad_ext.to_s+'px;'
+              td 
+                /! header news
+                == Slim::Template.new('./src/FR/partial/_header.slim').render
+
+                /! nav
+                == Slim::Template.new('./src/FR/partial/_nav.slim').render
+
+                /! title => Vos cadeaux du mois
+                / == Slim::Template.new('./src/FR/partial/_giftTitle.slim').render
+                
+                /! Gift zone
+                == Slim::Template.new('./src/FR/partial/_gift.slim').render
+
+                /! title => Les nouveautes du mois
+                == Slim::Template.new('./src/FR/partial/_selectionDuMois.slim').render
+
+                /! pckx3
+                == Slim::Template.new('./src/FR/partial/_pckx3.slim').render
+
+                /! pckx2 module
+                == Slim::Template.new('./src/FR/partial/_pckx2.slim').render
+
+                /! btn 
+                == Slim::Template.new('./src/FR/partial/_btshowallpdt.slim').render
+
+                /! shaded separator
+                == Slim::Template.new('./src/FR/partial/_separator-transp.slim').render
+
+                / banner 
+                / == Slim::Template.new('./src/FR/partial/_banner.slim').render
+
+                / shaded separator
+                / == Slim::Template.new('./src/FR/partial/_separator-transp.slim').render
+
+                /! footer zone1 title
+                == Slim::Template.new('./src/FR/partial/_fooZone1-title.slim').render
+                
+                /! footer zone1
+                == Slim::Template.new('./src/FR/partial/_fooZone1.slim').render
+                
+                /!  footer zone2 title
+                == Slim::Template.new('./src/FR/partial/_fooZone2-title.slim').render
+
+                /!  footer zone2
+                == Slim::Template.new('./src/FR/partial/_fooZone2.slim').render
+
+          /!  shaded transparent separator
+          == Slim::Template.new('./src/FR/partial/_separator-transp.slim').render
+
+          /!  legal notice
+          == Slim::Template.new('./src/FR/partial/_legal.slim').render

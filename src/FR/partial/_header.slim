@@ -1,0 +1,31 @@
+table border==$tabborder0
+  tr
+    td
+      table border==($tabborder0)
+        tr
+          / style=$pl+$pad_ext.to_s+'px;'+$pr+$pad_ext.to_s+'px;'
+          td align="right"
+            img alt="" border="0" height="25" src="images/header_s1.png"
+        tr
+          / style=$pl+$pad_ext.to_s+'px;'+$pr+$pad_ext.to_s+'px;'
+          td
+            table border==($tabborder0)
+              tr
+                td
+                  a href==($logo) target="_blank"
+                    img.altlogo alt="Confort et Vie" border="0" width=$column*5+$gutter*4 height="110" src="images/header_s2_1.png"
+                td 
+                  a href==($cat) target="_blank"
+                    img.altcat alt="Feuilletez le catalogue" border="0" width=$column*7+$gutter*7 height="110" src="images/header_s2_2.jpg"
+        tr
+          / style=$pl+$pad_ext.to_s+'px;'+$pr+$pad_ext.to_s+'px;'
+          td width=$column*12+$gutter*11
+            table border==($tabborder0) width="100%"
+              tr
+                / td align="left" style="padding-left: 10px;"
+                /   / img#header_s3_1
+                /   font style="font-family: Arial, sans-serif; font-size: 18px; font-style: italic; color: #A01F1F; "
+                /     | Vous rendre plus facile la vie de tous les jours
+                td align="right" style="padding-left: 10px;"
+                  a href==($cat) target="_blank"
+                    img alt="" border="0" src="images/header_s3_2.png"

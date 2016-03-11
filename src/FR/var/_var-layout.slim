@@ -1,0 +1,9 @@
+/  lancer la compile : slimrb -p template-CV.V3.html.slim template-CV.V3.html; html safe => .html_safe
+
+/! layout numeric
+- $tabArray = [710, 20, 10]
+- $pad_ext = 20; $column = 50; $gutter = 10;
+- $tab1 = $tabArray[0] + (2 * $pad_ext); $tab2 = $tab1 - (2 * $pad_ext);
+/! layout txt
+- $db = 'display: block;'; $pt = 'padding-top: '; $pr = 'padding-right: '; $pb = 'padding-bottom: '; $pl = 'padding-left: ';
+- $tabborder0 = '0" cellpadding="0" cellspacing="0';
