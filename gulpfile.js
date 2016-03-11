@@ -69,13 +69,11 @@ gulp.task('slim', function () {
   return gulp.src([src+'**/slim/*.slim'])
   .pipe(using())
   .pipe(slim( {pretty: true, indent: '2' })) // cb // {read:false},
-  .pipe(gulp.dest('render')) // slim folder
-  .pipe(plumber())
-  .pipe(using())
   .pipe(rename(function(path) {
     path.dirname += "/../";
   }))
-  .pipe(gulp.dest('render')) // html folder
+  .pipe(gulp.dest('render')) // html folder after rename ^
+  .pipe(plumber())
   .pipe(browserSync.reload({
     stream: true
   }))
@@ -94,10 +92,8 @@ gulp.task('premailer', function () {
   .on('end',function () {
     premailEnd = true;
     console.log('premailerOK: '+premailEnd+' rm render/slim folder ');
-    // rimraf('./render/**/slim',function (err) {console.log("slim destroy");})
-    rimraf('./render/**/css',function (err) {console.log("css destroy");})
-    // gulp.start('rmRenderSlimFolder');
-    // gulp.start('rmRenderCssFolder');
+    rimraf('./render/**/css',function (err) {console.log("css destroy");});
+    rimraf('./render/**/slim',function (err) {console.log("slim destroy");});
   })
   .pipe(debug({title: 'endPremailer:'}))
 });
@@ -114,24 +110,11 @@ function premailergo (slimEnd) {
     console.log('slim pas prêt.......')
   }
 };
-gulp.task('rmRenderSlimFolder', function (cb) {
-  rimraf('./render/**/slim',function (err) {
-    console.log("all done del slim");
-    return cb(null);
-  });
-});
-gulp.task('rmRenderCssFolder', function (cb) {
-  rimraf('./render/**/css',function (err) {
-    console.log("all done del css");
-    return cb(null);
-  });
-});
 
 // lancement > fonction watch
 gulp.task('dev',['browserSync','img','slim','sass','premailer'], function() {
   // src+'*.slim', ,src+'**/*.slim' // pas de fichier sur :root
   gulp.watch([src+'**/images/*.{png,jpg,gif}'],['img']);
-  // gulp.watch([src+'**/slim/*.slim',src+'**/**/*.slim'],['browserSync','slim','img','premailer']);
   gulp.watch([src+'**/slim/*.slim',src+'**/**/*.slim'],['slim','sass','premailer']);
   gulp.watch(src+'**/scss/*.scss',['sass','premailer','slim']);
 });
